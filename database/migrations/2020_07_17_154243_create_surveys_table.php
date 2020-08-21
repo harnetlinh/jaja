@@ -18,6 +18,7 @@ class CreateSurveysTable extends Migration
             $table->string('title_ja');
             $table->string('title_en');
             $table->tinyInteger('display');
+            $table->tinyInteger('status');
             $table->string('correct_pic');
             $table->string('incorrect_pic');
             $table->string('completemessage_ja');

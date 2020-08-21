@@ -10,6 +10,7 @@ $factory->define(Survey::class, function (Faker $faker) {
         'title_ja' => $faker->sentence(),
         'title_en' => $faker->sentence(),
         'display' => $faker->randomElement([0,1]),
+        'status' => $faker->randomElement([0,1]),
         'correct_pic'=> $faker->imageUrl($width = 200, $height = 200),
         'incorrect_pic'=> $faker->imageUrl($width = 200, $height = 200),
         'completemessage_ja' => $faker->sentence(),

@@ -43,26 +43,4 @@ class AnsweredSurvey extends TestCase
         // error_log("foreignkey = " +$answeredsurvey->user->getForeignKey());
         // $this->assertEquals('respondent_id', $answeredsurvey->user()->getForeignKey());
     }
-    /** @test */
-    public function test_answerdsurvey_has_many_detailansweredsurveys()
-    {
-
-        factory(\App\Laravue\Models\User::class)->create();
-        factory(\App\Laravue\Models\Department::class)->create();
-        factory(\App\Laravue\Models\Classs::class)->create();
-        factory(\App\Laravue\Models\Survey::class)->create();
-        factory(\App\Laravue\Models\Quiz::class)->create();
-        factory(\App\Laravue\Models\Option::class)->create();
-        $answeredsurvey = factory(\App\Laravue\Models\AnsweredSurvey::class)->create();
-        $detailansweredsurvey = factory(\App\Laravue\Models\DetailAnsweredSurvey::class)->create(['answered_survey_id' => $answeredsurvey->id]);
-
-        // Method 1: A detailansweredsurvey exists in a answeredsurvey's detailansweredsurvey collections.
-        $this->assertTrue($answeredsurvey->detailansweredsurveys->contains($detailansweredsurvey));
-
-        // Method 2: Count that a answeredsurvey detailansweredsurveys collection exists.
-        $this->assertEquals(1, $answeredsurvey->detailansweredsurveys->count());
-
-        // Method 3: detailansweredsurveys are related to answeredsurveys and is a collection instance.
-        $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $answeredsurvey->detailansweredsurveys);
-    }
 }

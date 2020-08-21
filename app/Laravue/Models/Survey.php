@@ -8,7 +8,7 @@ class Survey extends Model
 {
     //
     protected $fillable = [
-        'title_ja', 'title_en','display','correct_pic','incorrect_pic', 'completemessage_ja','completemessage_en','department_id','classs_id','admin_created'
+        'title_ja', 'title_en','display','status','correct_pic','incorrect_pic', 'completemessage_ja','completemessage_en','department_id','classs_id','admin_created'
     ];
     // protected $guarded = [];
     public function tags()

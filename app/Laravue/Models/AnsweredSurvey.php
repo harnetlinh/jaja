@@ -11,8 +11,4 @@ class AnsweredSurvey extends Model
     {
         return $this->belongsTo('App\Laravue\Models\User','respondent_id','id');
     }
-    public function detailansweredsurveys()
-    {
-        return $this->hasMany('App\Laravue\Models\DetailAnsweredSurvey');
-    }
 }
